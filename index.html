@@ -33,7 +33,8 @@
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -325,7 +326,7 @@
 
     <div class="profile-img">
       <!-- Profile Image with proper alt text and width/height for CLS prevention -->
-      <img src="assets/img/my-profile-img.jpg" alt="Shahensha Kadusha Shaha - Profile Photo" class="img-fluid rounded-circle" id="sidebar-profile-img" width="120" height="120">
+      <img src="assets/img/my-profile-img.jpg" alt="Shahensha Kadusha Shaha - Profile Photo" class="img-fluid rounded-circle" id="sidebar-profile-img" width="120" height="120" loading="lazy" decoding="async">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -361,8 +362,8 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background d-flex align-items-center">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Shahensha Kadusha Shaha</h2>
-        <h4 class="mb-4 text-light">Computer & IT Support | Data Management | Administrative Operations</h4>
+        <h1>Shahensha Kadusha Shaha</h1>
+        <h2 class="h4 mb-4 text-light">Computer & IT Support | Data Management | Administrative Operations</h2>
         <p class="mb-4" style="max-width: 600px;">
           Commerce Graduate with 7+ Years of Digital Service and CSC Operations Experience, 2 Years of Aadhaar Operations Experience and 2 Years of Corporate Technical Support Experience.
         </p>
@@ -651,7 +652,7 @@
       <div class="container" data-aos="fade-up">
         <h2 class="mb-4">SCAN TO VIEW MY ONLINE CV</h2>
         <p class="mb-4">HR and Administrators can scan this QR code to view my digital professional profile instantly on their mobile devices.</p>
-        <div id="qrcode" class="mt-4 mb-4 d-flex justify-content-center" aria-label="QR Code to Online CV"></div>
+        <div id="qrcode" class="mt-4 mb-4 d-flex justify-content-center"></div>
         <p class="text-muted small">URL: https://aaplesarakar.github.io/digital-cv/</p>
       </div>
     </section>
@@ -740,6 +741,13 @@
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
           });
+          
+          setTimeout(function() {
+            var qrImg = document.querySelector("#qrcode img");
+            if (qrImg) {
+              qrImg.setAttribute("alt", "QR Code for Digital CV");
+            }
+          }, 200);
       }
     });
   </script>

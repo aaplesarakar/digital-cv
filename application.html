@@ -17,6 +17,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   
   <!-- QR Code Library (Deferred for performance) -->
@@ -118,7 +120,7 @@
     <div class="application-container">
       
       <div class="qr-box">
-          <div id="qrcode" aria-label="QR Code to Online CV"></div>
+          <div id="qrcode"></div>
           <p>Scan to view<br>Online CV</p>
       </div>
 
@@ -186,6 +188,13 @@
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
           });
+          
+          setTimeout(function() {
+            var qrImg = document.querySelector("#qrcode img");
+            if (qrImg) {
+              qrImg.setAttribute("alt", "QR Code for Digital CV");
+            }
+          }, 200);
       }
     });
   </script>
