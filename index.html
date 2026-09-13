@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <!-- SEO & PageSpeed Best Practices -->
+  <title>Shahensha Kadusha Shaha - Digital Professional Profile</title>
+  <meta content="Digital Professional Profile & Job Application System of Shahensha Kadusha Shaha" name="description">
+  <meta content="Job Application, CV, Resume, Shahensha Kadusha Shaha, IT Support, Data Management" name="keywords">
+  <meta name="author" content="Shahensha Kadusha Shaha">
+  <meta name="theme-color" content="#007bb5">
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:title" content="Shahensha Kadusha Shaha - Digital Professional Profile">
+  <meta property="og:description" content="Commerce Graduate with 7+ Years of Digital Service, Aadhaar Operations, and Corporate Technical Support Experience.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/my-profile-img.jpg">
+
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts (Preloaded by the browser via preconnect) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- QR Code Library (Deferred for performance) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+
+  <style>
+    /* Custom Professional overrides */
+    :root {
+      --primary-color: #007bb5; /* Professional Blue */
+      --secondary-color: #00a8cc; /* Corporate Teal */
+      --dark-color: #2c3e50;
+    }
+    
+    .navmenu a:hover, .navmenu a.active, .navmenu .active:focus, .navmenu li:hover>a {
+      color: var(--secondary-color);
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, rgba(44, 62, 80, 0.9) 0%, rgba(0, 123, 181, 0.9) 100%), url("assets/img/hero-bg.jpeg") top center;
+      background-size: cover;
+    }
+
+    .hero-btn {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    
+    .btn-primary-custom {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+    }
+    
+    .btn-primary-custom:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+    
+    .btn-outline-custom {
+      border: 2px solid white;
+      color: white;
+    }
+    
+    .btn-outline-custom:hover {
+      background-color: white;
+      color: var(--primary-color);
+    }
+
+    .hr-quick-view {
+      background-color: #f8f9fa;
+      border-left: 5px solid var(--primary-color);
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    
+    .hr-quick-view h5 {
+      color: var(--dark-color);
+      font-weight: 600;
+    }
+
+    .hr-quick-view ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .hr-quick-view li {
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .hr-quick-view li i {
+      color: var(--primary-color);
+      margin-right: 8px;
+    }
+
+    .skills .progress .skill {
+        padding: 0;
+        margin: 0 0 6px 0;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 600;
+        font-family: var(--heading-font);
+        color: var(--heading-color);
+    }
+    
+    .skills-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .skills-list li {
+        background: #e9ecef;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--dark-color);
+    }
+
+    .skills-list li i {
+        color: var(--primary-color);
+        margin-right: 5px;
+    }
+
+    #qrcode img {
+        margin: 0 auto;
+        border: 10px solid white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Print Styles */
+    @media print {
+      @page {
+        margin: 0.5cm;
+      }
+      body, html {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt !important;
+        height: auto !important;
+        min-height: 0 !important;
+      }
+      .header, .hero-btn, #footer, .navmenu, .mobile-nav-toggle, #preloader, #scroll-top {
+        display: none !important;
+      }
+      .main {
+        margin-left: 0 !important;
+        padding: 0 !important;
+      }
+      section, .section {
+        padding: 10px 0 !important;
+        margin-bottom: 0 !important;
+        min-height: 0 !important;
+        page-break-inside: auto !important;
+      }
+      .section-title {
+        padding-bottom: 5px !important;
+        margin-bottom: 10px !important;
+      }
+      .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 15px !important;
+        margin: 0 !important;
+      }
+      h2 {
+        font-size: 14pt !important;
+        margin-bottom: 5px !important;
+        border-bottom: 2px solid #ccc !important;
+        padding-bottom: 5px !important;
+        color: var(--primary-color) !important;
+      }
+      h3, h4, h5 {
+        font-size: 12pt !important;
+        margin-bottom: 5px !important;
+        color: #000 !important;
+      }
+      p, li {
+        font-size: 11pt !important;
+        margin-bottom: 5px !important;
+        line-height: 1.3 !important;
+      }
+      .hero {
+        background: none !important;
+        color: black !important;
+        height: auto !important;
+        min-height: 0 !important;
+        padding: 0 0 10px 0 !important;
+        text-align: center !important;
+      }
+      .hero h2 {
+          color: black !important;
+          font-size: 20pt !important;
+          border-bottom: none !important;
+          margin-top: 0 !important;
+      }
+      .hero p {
+          color: #333 !important;
+          margin: 0 auto !important;
+      }
+      
+      /* Make rows side-by-side instead of stacking */
+      .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        margin-right: -10px !important;
+        margin-left: -10px !important;
+        page-break-inside: auto !important;
+      }
+      .col-lg-6, .col-md-6, .col-lg-12, .col-lg-4, .col-md-4 {
+        padding: 0 10px !important;
+      }
+      .col-lg-6, .col-md-6 {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+      }
+      .col-lg-4, .col-md-4 {
+        flex: 0 0 33.333% !important;
+        max-width: 33.333% !important;
+      }
+      
+      .card, .info-wrap, .hr-quick-view {
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+        page-break-inside: avoid !important;
+        border-radius: 5px !important;
+      }
+      .resume-item {
+        padding: 0 0 10px 15px !important;
+        margin-top: -2px !important;
+        border-left: 2px solid #ccc !important;
+        page-break-inside: avoid !important;
+      }
+      .resume-item::before {
+        border: 2px solid #ccc !important;
+        background: #fff !important;
+      }
+      
+      .skills-list {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+      }
+      .skills-list li {
+        border: 1px solid #aaa !important;
+        background: transparent !important;
+        padding: 2px 8px !important;
+        font-size: 10pt !important;
+        color: #000 !important;
+        border-radius: 4px !important;
+      }
+      #qrcode img {
+        width: 120px !important;
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 auto !important;
+      }
+      #qrcode-section {
+        text-align: center !important;
+        page-break-inside: avoid !important;
+        background: none !important;
+        padding: 10px !important;
+      }
+      .alert {
+        border: 1px solid #ccc !important;
+        background: none !important;
+        padding: 10px !important;
+      }
+      
+      /* Hide unnecessary UI elements */
+      a {
+        text-decoration: none !important;
+        color: black !important;
+      }
+      
+      /* Fix AOS hiding elements in print */
+      [data-aos] {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+      }
+      
+      /* Icons */
+      .bi {
+          color: #555 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list" aria-label="Toggle Navigation"></i>
+
+    <div class="profile-img">
+      <!-- Profile Image with proper alt text and width/height for CLS prevention -->
+      <img src="assets/img/my-profile-img.jpg" alt="Shahensha Kadusha Shaha - Profile Photo" class="img-fluid rounded-circle" id="sidebar-profile-img" width="120" height="120">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Shahensha Kadusha Shaha</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <!-- Added aria-labels and rel="noopener noreferrer" for accessibility and security -->
+      <a href="tel:+919665166831" class="phone" aria-label="Call Me"><i class="bi bi-telephone" aria-hidden="true"></i></a>
+      <a href="mailto:shahensha.shaha@gmail.com" class="email" aria-label="Email Me"><i class="bi bi-envelope" aria-hidden="true"></i></a>
+      <a href="https://wa.me/+919665166831" class="whatsapp" aria-label="WhatsApp Me" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
+      <a href="https://github.com/shahenshashaha" class="github" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu" aria-label="Main Navigation">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon" aria-hidden="true"></i> Professional Summary</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon" aria-hidden="true"></i> Experience & Education</a></li>
+        <li><a href="#skills-section"><i class="bi bi-gem navicon" aria-hidden="true"></i> Core Skills</a></li>
+        <li><a href="#certificates"><i class="bi bi-award navicon" aria-hidden="true"></i> Certificates</a></li>
+        <li><a href="#portfolio"><i class="bi bi-briefcase navicon" aria-hidden="true"></i> Portfolio</a></li>
+        <li><a href="#why-hire-me"><i class="bi bi-check-circle navicon" aria-hidden="true"></i> Why Hire Me</a></li>
+        <li><a href="#qrcode-section"><i class="bi bi-qr-code-scan navicon" aria-hidden="true"></i> QR Code</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon" aria-hidden="true"></i> Contact</a></li>
+        <li><a href="application.html" class="text-warning"><i class="bi bi-send navicon" aria-hidden="true"></i> Job Application</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background d-flex align-items-center">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Shahensha Kadusha Shaha</h2>
+        <h4 class="mb-4 text-light">Computer & IT Support | Data Management | Administrative Operations</h4>
+        <p class="mb-4" style="max-width: 600px;">
+          Commerce Graduate with 7+ Years of Digital Service and CSC Operations Experience, 2 Years of Aadhaar Operations Experience and 2 Years of Corporate Technical Support Experience.
+        </p>
+        
+        <div class="d-flex flex-wrap">
+          <a href="#resume" class="btn btn-primary-custom hero-btn"><i class="bi bi-download me-2" aria-hidden="true"></i> Download CV</a>
+          <button onclick="window.print()" class="btn btn-primary-custom hero-btn" aria-label="Print CV"><i class="bi bi-printer me-2" aria-hidden="true"></i> Print CV</button>
+          <a href="#contact" class="btn btn-outline-custom hero-btn"><i class="bi bi-envelope me-2" aria-hidden="true"></i> Contact Me</a>
+          <a href="application.html" class="btn btn-warning hero-btn" style="color: #000;"><i class="bi bi-file-text me-2" aria-hidden="true"></i> View Job Application</a>
+        </div>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Professional Summary</h2>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <!-- HR Quick View -->
+        <div class="hr-quick-view">
+            <h5><i class="bi bi-lightning-charge-fill text-warning" aria-hidden="true"></i> HR Quick View</h5>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> B.Com Graduate</li>
+                        <li><i class="bi bi-laptop" aria-hidden="true"></i> 7+ Years CSC / Digital Operations</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li><i class="bi bi-fingerprint" aria-hidden="true"></i> 2 Years Aadhaar Operations</li>
+                        <li><i class="bi bi-headset" aria-hidden="true"></i> 2 Years Tech Support (Integra Micro)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-3">
+                 <a href="#resume" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye" aria-hidden="true"></i> View Full CV</a>
+                 <a href="application.html" class="btn btn-sm btn-outline-success"><i class="bi bi-file-text" aria-hidden="true"></i> View Application</a>
+            </div>
+        </div>
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-12 content">
+            <h3>Candidate is a Commerce Graduate with extensive multi-domain experience.</h3>
+            <p class="py-3">
+              I have practical, hands-on experience in CSC/Digital Service Operations, Aadhaar Operations, Technical Support, and Customer Communication. I am adept at managing digital platforms, troubleshooting basic IT issues, and providing excellent public-facing services.
+            </p>
+            <div class="alert alert-info border-0 shadow-sm">
+                <strong><i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i> How I can contribute to your organization:</strong><br>
+                Candidate can efficiently handle IT/computer operations, client/customer data management, documentation workflows, front office support, record management, and basic IT support.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /About Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Experience & Education</h2>
+        <p>A detailed vertical timeline of professional roles and educational qualifications.</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            
+            <div class="resume-item">
+              <h4>CSC / Digital Service Centre</h4>
+              <h5>7–8 Years</h5>
+              <p><em>Operations & Management</em></p>
+              <ul>
+                <li>Online Data Entry & Digital Documentation</li>
+                <li>Online Application Processing & Government Portal Operations</li>
+                <li>Document Scanning, Printing, and Record Management</li>
+                <li>Customer Service & Online Services delivery</li>
+                <li>Basic Technical Troubleshooting & Daily Computer Operations</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Aadhaar Enrollment Supervisor</h4>
+              <h5>2 Years</h5>
+              <p><em>Operations & Verification</em></p>
+              <ul>
+                <li>Aadhaar Enrollment and Update Operations</li>
+                <li>Applicant Data Handling & Document Verification Workflow</li>
+                <li>Ensuring Data Accuracy and Biometric Workflow management</li>
+                <li>Applicant Support & Confidential Information Handling</li>
+                <li>Complete Centre Operations</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title" style="visibility: hidden;" aria-hidden="true">Experience Continued</h3>
+            
+            <div class="resume-item">
+              <h4>Junior Technical Support Executive</h4>
+              <h5>2 Years</h5>
+              <p><em>Integra Micro Systems (PDS Department, Buldhana District)</em></p>
+              <ul>
+                <li>Provided technical support for the Public Distribution System (PDS) across Buldhana district.</li>
+                <li>Computer/System Support & End User Support</li>
+                <li>Issue Identification & Resolution for PDS operations</li>
+                <li>Technical Documentation in a Professional Corporate Environment</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Telecaller Executive</h4>
+              <h5>Previous Experience</h5>
+              <p><em>Customer Service</em></p>
+              <ul>
+                <li>Customer Communication & Telephone Support</li>
+                <li>Enquiry Handling & Customer Follow-up</li>
+                <li>Dedicated Customer Service</li>
+              </ul>
+            </div>
+            
+            <h3 class="resume-title mt-4">Education</h3>
+            <div class="resume-item pb-0">
+              <h4>Bachelor of Commerce (B.Com)</h4>
+              <h5>2016</h5>
+              <p><em>Rajkunwar Mahavidyalay Dhawda</em></p>
+              <p>Completed graduation in Commerce, providing a strong foundation for administrative and data management roles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Resume Section -->
+
+    <!-- Core Skills Section -->
+    <section id="skills-section" class="skills section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Core Skills</h2>
+        <p>Technical, administrative, and interpersonal skills tailored for corporate & administrative operations.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <ul class="skills-list">
+            <li><i class="bi bi-pc-display" aria-hidden="true"></i> Computer Operations</li>
+            <li><i class="bi bi-keyboard" aria-hidden="true"></i> Data Entry</li>
+            <li><i class="bi bi-database" aria-hidden="true"></i> Data Management</li>
+            <li><i class="bi bi-tools" aria-hidden="true"></i> IT Troubleshooting</li>
+            <li><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Digital Documentation</li>
+            <li><i class="bi bi-globe" aria-hidden="true"></i> Online Portal Operations</li>
+            <li><i class="bi bi-archive" aria-hidden="true"></i> Record Management</li>
+            <li><i class="bi bi-people" aria-hidden="true"></i> Customer Handling</li>
+            <li><i class="bi bi-chat-dots" aria-hidden="true"></i> Communication</li>
+            <li><i class="bi bi-printer" aria-hidden="true"></i> Printing</li>
+            <li><i class="bi bi-upc-scan" aria-hidden="true"></i> Scanning</li>
+            <li><i class="bi bi-robot" aria-hidden="true"></i> Generative AI Tools</li>
+            <li><i class="bi bi-briefcase" aria-hidden="true"></i> Administrative Support</li>
+        </ul>
+      </div>
+    </section>
+    <!-- /Core Skills Section -->
+    
+    <!-- Certificates Section -->
+    <section id="certificates" class="services section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Certificates</h2>
+        <p>Professional certifications and relevant training completed.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Certificate Item 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 p-4" style="border-left: 4px solid var(--primary-color) !important;">
+              <h4><i class="bi bi-shield-check text-success me-2"></i> Aadhaar Supervisor</h4>
+              <p class="text-muted mb-1">Issued by: NSEIT / UIDAI</p>
+              <p class="text-muted small">Role: Supervisor / Operator</p>
+              <div class="mt-2"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Verified</span></div>
+            </div>
+          </div>
+          <!-- Certificate Item 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 p-4" style="border-left: 4px solid var(--primary-color) !important;">
+              <h4><i class="bi bi-laptop text-primary me-2"></i> MS-CIT</h4>
+              <p class="text-muted mb-1">Issued by: MKCL</p>
+              <p class="text-muted small">Information Technology</p>
+              <div class="mt-2"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Verified</span></div>
+            </div>
+          </div>
+          <!-- Certificate Item 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 p-4" style="border-left: 4px solid var(--primary-color) !important;">
+              <h4><i class="bi bi-pc-display text-info me-2"></i> CCC</h4>
+              <p class="text-muted mb-1">Issued by: NIELIT</p>
+              <p class="text-muted small">Course on Computer Concepts</p>
+              <div class="mt-2"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Verified</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Certificates Section -->
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio / Work Profile</h2>
+        <p>Highlights of digital service operations, technical support, and data management tasks handled.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <!-- Portfolio Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-laptop me-2"></i> CSC Operations</h5>
+                <p class="card-text small text-muted">Successfully processed hundreds of online applications, managing document scanning, uploading, and record keeping.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-fingerprint me-2"></i> Aadhaar Data Management</h5>
+                <p class="card-text small text-muted">Managed sensitive biometric and demographic data with 100% compliance and accuracy as a Supervisor.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-headset me-2"></i> Technical Troubleshooting</h5>
+                <p class="card-text small text-muted">Resolved complex hardware and software issues for PDS department end-users during tenure at Integra Micro Systems.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Portfolio Section -->
+    
+    <!-- Why Hire Me Section -->
+    <section id="why-hire-me" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Why Hire Me</h2>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h5 class="text-primary"><i class="bi bi-diagram-3-fill me-2" aria-hidden="true"></i> Multi-domain professional experience</h5>
+                    <p class="mt-2 text-muted">A unique blend of CSC Operations, Aadhaar Operations, Corporate Technical Support, and Customer Service.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h5 class="text-primary"><i class="bi bi-clock-history me-2" aria-hidden="true"></i> Long-term Digital Operations Experience</h5>
+                    <p class="mt-2 text-muted">7–8 years of practical, hands-on computer and digital service operations experience.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h5 class="text-primary"><i class="bi bi-wrench-adjustable-circle-fill me-2" aria-hidden="true"></i> Technical + Administrative Combination</h5>
+                    <p class="mt-2 text-muted">Proficient in technical troubleshooting combined with excellent documentation and customer handling skills.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 p-4">
+                    <h5 class="text-primary"><i class="bi bi-person-lines-fill me-2" aria-hidden="true"></i> Public-facing Experience</h5>
+                    <p class="mt-2 text-muted">Direct, extensive experience in customer/citizen interaction and service delivery.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Why Hire Me Section -->
+
+    <!-- QR Code Section -->
+    <section id="qrcode-section" class="contact section light-background text-center py-5">
+      <div class="container" data-aos="fade-up">
+        <h2 class="mb-4">SCAN TO VIEW MY ONLINE CV</h2>
+        <p class="mb-4">HR and Administrators can scan this QR code to view my digital professional profile instantly on their mobile devices.</p>
+        <div id="qrcode" class="mt-4 mb-4 d-flex justify-content-center" aria-label="QR Code to Online CV"></div>
+        <p class="text-muted small">URL: https://shahenshashaha.github.io/digital-cv/</p>
+      </div>
+    </section>
+    <!-- /QR Code Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Get in touch for interviews or further details.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-8">
+            <div class="info-wrap p-4 shadow-sm rounded">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></i>
+                <div>
+                  <h3>Location</h3>
+                  <p>Madni, Tal. Sillod, Dist. Chhatrapati Sambhajinagar</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0" aria-hidden="true"></i>
+                <div>
+                  <h3>Call Me</h3>
+                  <p>+91 96651 66831</p>
+                </div>
+              </div>
+
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0" aria-hidden="true"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>shahensha.shaha@gmail.com</p>
+                </div>
+              </div>
+              
+              <div class="mt-4 text-center">
+                  <a href="tel:+919665166831" class="btn btn-primary-custom me-2"><i class="bi bi-telephone" aria-hidden="true"></i> Call Now</a>
+                  <a href="https://wa.me/+919665166831" class="btn btn-success me-2" style="background-color: #25D366; border: none;" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+                  <a href="mailto:shahensha.shaha@gmail.com" class="btn btn-outline-secondary"><i class="bi bi-envelope" aria-hidden="true"></i> Email</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background text-center py-4">
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Shahensha Kadusha Shaha</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to Top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files (Deferred for PageSpeed optimization) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js" defer></script>
+  
+  <script>
+    // Generate QR Code once the DOM is fully loaded and libraries are available
+    window.addEventListener('load', function() {
+      if (typeof QRCode !== 'undefined') {
+          var githubUrl = "https://shahenshashaha.github.io/digital-cv/";
+          var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: githubUrl,
+            width: 150,
+            height: 150,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+          });
+      }
+    });
+  </script>
+
+</body>
+</html>
