@@ -23,6 +23,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
+  <!-- Preload Critical Assets (Fixes LCP and Render-Blocking) -->
+  <link rel="preload" href="assets/img/hero-bg.jpeg" as="image">
+  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style">
+  <link rel="preload" href="assets/css/main.css" as="style">
+
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -322,7 +328,7 @@
 <body class="index-page">
 
   <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list" aria-label="Toggle Navigation"></i>
+    <i class="header-toggle d-xl-none bi bi-list" role="button" aria-label="Toggle Navigation" tabindex="0"></i>
 
     <div class="profile-img">
       <!-- Profile Image with proper alt text and width/height for CLS prevention -->
