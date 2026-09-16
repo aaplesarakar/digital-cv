@@ -16,7 +16,8 @@
   <meta property="og:title" content="Shahensha Kadusha Shaha - Digital Professional Profile">
   <meta property="og:description" content="Commerce Graduate with 7+ Years of Digital Service, Aadhaar Operations, and Corporate Technical Support Experience.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/my-profile-img.jpg">
+  <!-- Fix: og:image must be an absolute URL for social media sharing to work -->
+  <meta property="og:image" content="https://aaplesarakar.github.io/digital-cv/assets/img/my-profile-img.jpg">
 
   <!-- Preconnect to external domains for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,8 +34,7 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts (Preloaded by the browser via preconnect) -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" as="style">
+  <!-- Fonts: lazy-loaded for performance (preload tag removed — it was redundant and caused duplicate fetch) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
@@ -377,7 +377,8 @@
         </p>
         
         <div class="d-flex flex-wrap">
-          <a href="#resume" class="btn btn-primary-custom hero-btn"><i class="bi bi-download me-2" aria-hidden="true"></i> Download CV</a>
+          <!-- Fix: was labeled "Download CV" but only scrolled to #resume section — misleading -->
+          <a href="#resume" class="btn btn-primary-custom hero-btn"><i class="bi bi-file-person me-2" aria-hidden="true"></i> View CV</a>
           <button onclick="window.print()" class="btn btn-primary-custom hero-btn" aria-label="Print CV"><i class="bi bi-printer me-2" aria-hidden="true"></i> Print CV</button>
           <a href="#contact" class="btn btn-outline-custom hero-btn"><i class="bi bi-envelope me-2" aria-hidden="true"></i> Contact Me</a>
           <a href="application.html" class="btn btn-warning hero-btn" style="color: #000;"><i class="bi bi-file-text me-2" aria-hidden="true"></i> View Job Application</a>
@@ -756,6 +757,12 @@
               qrImg.setAttribute("alt", "QR Code for Digital CV");
             }
           }, 200);
+      } else {
+          // Fix: Fallback if QR library fails to load
+          var el = document.getElementById("qrcode");
+          if (el) {
+            el.innerHTML = '<p style="color:#aaa;font-size:13px;">QR Code unavailable.<br><a href="https://aaplesarakar.github.io/digital-cv/" target="_blank" rel="noopener noreferrer">Visit CV Link</a></p>';
+          }
       }
     });
   </script>

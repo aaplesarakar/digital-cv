@@ -13,8 +13,7 @@
   <meta name="theme-color" content="#f4f7f6">
 
   <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Note: Google Fonts preconnects removed — fonts not used in this page -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
   <!-- Preload Critical CSS -->
@@ -70,6 +69,13 @@
     .letter-body li {
         margin-bottom: 5px;
     }
+    /* Fix: clearfix for floated .qr-box */
+    .application-container::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
     .signature-section {
       margin-top: 50px;
     }
@@ -159,7 +165,7 @@
         </ul>
         <p>I believe my diverse skill set—combining technical troubleshooting, accurate data entry, familiarity with modern AI tools (like ChatGPT/Gemini) for productivity, and effective customer handling—makes me an ideal candidate to manage your organization's computer operations, administrative workflows, and front desk operations.</p>
         <p>I have attached my digital CV which can be accessed by scanning the QR code on this letter or by visiting the link below.</p>
-        <p><strong>Digital CV Link:</strong> <a href="https://aaplesarakar.github.io/digital-cv/">https://aaplesarakar.github.io/digital-cv/</a></p>
+        <p><strong>Digital CV Link:</strong> <a href="https://aaplesarakar.github.io/digital-cv/" target="_blank" rel="noopener noreferrer">https://aaplesarakar.github.io/digital-cv/</a></p>
         <p>Thank you for considering my application. I look forward to the opportunity to contribute to the efficient operations of your organization.</p>
       </div>
 
@@ -173,7 +179,10 @@
 
     <div class="action-buttons mb-5">
         <button onclick="window.print()" class="btn btn-primary me-2" aria-label="Print Application"><i class="bi bi-printer" aria-hidden="true"></i> Print Application</button>
-        <button onclick="window.print()" class="btn btn-danger" aria-label="Download Application as PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Download PDF</button>
+        <!-- Fix: Previously both buttons called window.print() — misleading UX.
+             Now "Save as PDF" clearly instructs the user to choose 'Save as PDF'
+             in the browser print dialog. True server-side PDF would need a backend. -->
+        <button onclick="savePDF()" class="btn btn-danger" aria-label="Save Application as PDF"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i> Save as PDF</button>
     </div>
 
   </main>
@@ -201,8 +210,21 @@
               qrImg.setAttribute("alt", "QR Code for Digital CV");
             }
           }, 200);
+      } else {
+          // Fix: Fallback message if QR Code library fails to load
+          document.getElementById("qrcode").innerHTML =
+            '<p style="font-size:11px;color:#888;">QR unavailable.<br>Visit link below.</p>';
       }
     });
+
+    // Fix: savePDF clearly guides user to use "Save as PDF" in print dialog
+    function savePDF() {
+      var origTitle = document.title;
+      document.title = "Job_Application_Shahensha_Kadusha_Shaha";
+      alert('In the print dialog:\n1. Set Destination → "Save as PDF"\n2. Click Save\n\nThis will download the application as a PDF file.');
+      window.print();
+      document.title = origTitle;
+    }
   </script>
 
 </body>
