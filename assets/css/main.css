@@ -332,10 +332,7 @@ h6 {
 
 .navmenu .dropdown a,
 .navmenu .dropdown a:focus {
-<<<<<<< HEAD
   /* Fix: was `--nav-dropdown-color` (invalid) — must be wrapped in var() */
-=======
->>>>>>> 03fed881110a78f6c7a16cbd2cdf744bbe019bf6
   color: var(--nav-dropdown-color);
 }
 
@@ -1003,7 +1000,6 @@ section,
 
 .testimonials .testimonial-item p {
   font-style: italic;
-<<<<<<< HEAD
   /* Fix: was `margin: 0 15px 15px 15px` then `margin-bottom: 35px` — conflicting.
      Consolidated into one shorthand with correct bottom value (35px). */
   margin: 0 15px 35px 15px;
@@ -1011,12 +1007,6 @@ section,
   background-color: var(--surface-color);
   position: relative;
   border-radius: 6px;
-=======
-  margin: 0 15px 15px 15px;
-  padding: 20px 20px 60px 20px;
-  background: var(--surface-color);
-  position: relative;
->>>>>>> 03fed881110a78f6c7a16cbd2cdf744bbe019bf6
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 

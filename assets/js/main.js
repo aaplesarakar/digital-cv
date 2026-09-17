@@ -15,21 +15,14 @@
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
-<<<<<<< HEAD
-    document.querySelector('#header').classList.toggle('header-show');
-    // Fix: added null check — headerToggleBtn can be null on pages like application.html
+    const header = document.querySelector('#header');
+    if (header) {
+      header.classList.toggle('header-show');
+    }
     if (headerToggleBtn) {
       headerToggleBtn.classList.toggle('bi-list');
       headerToggleBtn.classList.toggle('bi-x');
     }
-=======
-    const header = document.querySelector('#header');
-    if (!header || !headerToggleBtn) return;
-
-    header.classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
->>>>>>> 03fed881110a78f6c7a16cbd2cdf744bbe019bf6
   }
 
   if (headerToggleBtn) {
@@ -134,21 +127,12 @@
       const section = document.querySelector(window.location.hash);
       if (section) {
         setTimeout(() => {
-<<<<<<< HEAD
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          // Fix: parseInt('auto') or parseInt('') returns NaN — added `|| 0` fallback
-          // NaN in scrollTo({top}) causes incorrect scroll position in some browsers
-          window.scrollTo({
-            top: section.offsetTop - (parseInt(scrollMarginTop) || 0),
-=======
           const target = document.querySelector(window.location.hash);
           if (!target) return;
 
           const scrollMarginTop = getComputedStyle(target).scrollMarginTop;
           window.scrollTo({
-            top: target.offsetTop - parseInt(scrollMarginTop, 10),
->>>>>>> 03fed881110a78f6c7a16cbd2cdf744bbe019bf6
+            top: target.offsetTop - (parseInt(scrollMarginTop, 10) || 0),
             behavior: 'smooth'
           });
         }, 100);
