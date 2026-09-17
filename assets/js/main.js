@@ -16,11 +16,21 @@
 
   function headerToggle() {
     document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
+    // Fix: added null check — headerToggleBtn can be null on pages like application.html
+    if (headerToggleBtn) {
+      headerToggleBtn.classList.toggle('bi-list');
+      headerToggleBtn.classList.toggle('bi-x');
+    }
   }
   if (headerToggleBtn) {
     headerToggleBtn.addEventListener('click', headerToggle);
+    // Fix: keyboard accessibility — Enter/Space key support for screen reader users
+    headerToggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        headerToggle();
+      }
+    });
   }
 
   /**
@@ -104,8 +114,10 @@
         setTimeout(() => {
           let section = document.querySelector(window.location.hash);
           let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          // Fix: parseInt('auto') or parseInt('') returns NaN — added `|| 0` fallback
+          // NaN in scrollTo({top}) causes incorrect scroll position in some browsers
           window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
+            top: section.offsetTop - (parseInt(scrollMarginTop) || 0),
             behavior: 'smooth'
           });
         }, 100);
