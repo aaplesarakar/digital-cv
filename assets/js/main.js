@@ -15,25 +15,12 @@
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
-    const header = document.querySelector('#header');
-    if (header) {
-      header.classList.toggle('header-show');
-    }
-    if (headerToggleBtn) {
-      headerToggleBtn.classList.toggle('bi-list');
-      headerToggleBtn.classList.toggle('bi-x');
-    }
+    document.querySelector('#header').classList.toggle('header-show');
+    headerToggleBtn.classList.toggle('bi-list');
+    headerToggleBtn.classList.toggle('bi-x');
   }
-
   if (headerToggleBtn) {
     headerToggleBtn.addEventListener('click', headerToggle);
-    // Fix: keyboard accessibility — Enter/Space key support for screen reader users
-    headerToggleBtn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        headerToggle();
-      }
-    });
   }
 
   /**
@@ -41,11 +28,11 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      const header = document.querySelector('#header');
-      if (header && header.classList.contains('header-show')) {
+      if (document.querySelector('.header-show')) {
         headerToggle();
       }
     });
+
   });
 
   /**
@@ -54,18 +41,8 @@
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
     navmenu.addEventListener('click', function(e) {
       e.preventDefault();
-
-      const parent = this.parentNode;
-      const dropdown = parent ? parent.nextElementSibling : null;
-
-      if (parent) {
-        parent.classList.toggle('active');
-      }
-
-      if (dropdown) {
-        dropdown.classList.toggle('dropdown-active');
-      }
-
+      this.parentNode.classList.toggle('active');
+      this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
       e.stopImmediatePropagation();
     });
   });
@@ -83,14 +60,13 @@
   /**
    * Scroll top button
    */
-  const scrollTop = document.querySelector('.scroll-top');
+  let scrollTop = document.querySelector('.scroll-top');
 
   function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
-
   if (scrollTop) {
     scrollTop.addEventListener('click', (e) => {
       e.preventDefault();
@@ -102,7 +78,7 @@
   }
 
   window.addEventListener('load', toggleScrollTop);
-  window.addEventListener('scroll', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop);
 
   /**
    * Animation on scroll function and init
@@ -122,17 +98,14 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function(e) {
     if (window.location.hash) {
-      const section = document.querySelector(window.location.hash);
-      if (section) {
+      if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
-          const target = document.querySelector(window.location.hash);
-          if (!target) return;
-
-          const scrollMarginTop = getComputedStyle(target).scrollMarginTop;
+          let section = document.querySelector(window.location.hash);
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
           window.scrollTo({
-            top: target.offsetTop - (parseInt(scrollMarginTop, 10) || 0),
+            top: section.offsetTop - parseInt(scrollMarginTop),
             behavior: 'smooth'
           });
         }, 100);
@@ -143,28 +116,23 @@
   /**
    * Navmenu Scrollspy
    */
-  const navmenulinks = document.querySelectorAll('.navmenu a');
+  let navmenulinks = document.querySelectorAll('.navmenu a');
 
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
-
-      const section = document.querySelector(navmenulink.hash);
+      let section = document.querySelector(navmenulink.hash);
       if (!section) return;
-
-      const position = window.scrollY + 200;
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-
-      if (position >= sectionTop && position <= sectionBottom) {
+      let position = window.scrollY + 200;
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
         navmenulink.classList.add('active');
       } else {
         navmenulink.classList.remove('active');
       }
-    });
+    })
   }
-
   window.addEventListener('load', navmenuScrollspy);
-  window.addEventListener('scroll', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
+
 })();

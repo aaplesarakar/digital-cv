@@ -5,13 +5,22 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
+  <!-- Google Analytics Placeholder -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-MEASUREMENT-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'YOUR-MEASUREMENT-ID');
+  </script>
+  
   <!-- SEO & PageSpeed Best Practices -->
   <title>Shahensha Kadusha Shaha - Digital Professional Profile</title>
   <meta content="Digital Professional Profile & Job Application System of Shahensha Kadusha Shaha" name="description">
   <meta content="Job Application, CV, Resume, Shahensha Kadusha Shaha, IT Support, Data Management" name="keywords">
   <meta name="author" content="Shahensha Kadusha Shaha">
   <meta name="theme-color" content="#007bb5">
-<meta name="google-site-verification" content="AkqdGiQ9XIfCsTw1VEQpIhLUenHLHSB7zhKcMX0Ew-U" />
+
   <!-- Open Graph / Social Media Preview -->
   <meta property="og:title" content="Shahensha Kadusha Shaha - Digital Professional Profile">
   <meta property="og:description" content="Commerce Graduate with 7+ Years of Digital Service, Aadhaar Operations, and Corporate Technical Support Experience.">
@@ -56,7 +65,24 @@
       --primary-color: #007bb5; /* Professional Blue */
       --secondary-color: #00a8cc; /* Corporate Teal */
       --dark-color: #2c3e50;
+      --bg-color: #ffffff;
+      --text-color: #444444;
+      --heading-color: #2c3e50;
+      --section-bg: #f8f9fa;
     }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --heading-color: #ffffff;
+      --section-bg: #1e1e1e;
+      --dark-color: #ffffff;
+    }
+
+    body { background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; }
+    h1, h2, h3, h4, h5, h6 { color: var(--heading-color); }
+    .section.light-background { background-color: var(--section-bg); }
+    .card, .hr-quick-view, .info-wrap { background-color: var(--section-bg); color: var(--text-color); border-color: #333 !important;}
     
     .navmenu a:hover, .navmenu a.active, .navmenu .active:focus, .navmenu li:hover>a {
       color: var(--secondary-color);
@@ -165,6 +191,37 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
+    /* Freelance Floating Button */
+    .freelance-btn {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background-color: #ffc107;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-weight: 600;
+      z-index: 999;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+    
+    .freelance-btn:hover {
+      background-color: #e0a800;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .freelance-btn i {
+      font-size: 20px;
+      margin-right: 8px;
+    }
+
     /* Print Styles */
     @media print {
       @page {
@@ -177,7 +234,7 @@
         height: auto !important;
         min-height: 0 !important;
       }
-      .header, .hero-btn, #footer, .navmenu, .mobile-nav-toggle, #preloader, #scroll-top {
+      .header, .hero-btn, #footer, .navmenu, .mobile-nav-toggle, #preloader, #scroll-top, .freelance-btn {
         display: none !important;
       }
       .main {
@@ -329,6 +386,12 @@
 
 <body class="index-page">
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress-bar" style="position: fixed; top: 0; left: 0; height: 4px; background: var(--primary-color); width: 0%; z-index: 9999;"></div>
+
+  <!-- Google Translate Element -->
+  <div id="google_translate_element" style="position: absolute; top: 10px; right: 20px; z-index: 1000;"></div>
+
   <header id="header" class="header dark-background d-flex flex-column">
     <i class="header-toggle d-xl-none bi bi-list" role="button" aria-label="Toggle Navigation" tabindex="0"></i>
 
@@ -371,7 +434,7 @@
     <section id="hero" class="hero section dark-background d-flex align-items-center">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Shahensha Kadusha Shaha</h1>
-        <h2 class="h4 mb-4 text-light">Computer & IT Support | Data Management | Administrative Operations</h2>
+        <h2 class="h4 mb-4 text-light">I'm a <span class="typed" data-typed-items="Freelancer, Computer & IT Support Expert, Data Management Specialist, Administrative Professional"></span></h2>
         <p class="mb-4" style="max-width: 600px;">
           Commerce Graduate with 7+ Years of Digital Service and CSC Operations Experience, 2 Years of Aadhaar Operations Experience and 2 Years of Corporate Technical Support Experience.
         </p>
@@ -382,6 +445,7 @@
           <button onclick="window.print()" class="btn btn-primary-custom hero-btn" aria-label="Print CV"><i class="bi bi-printer me-2" aria-hidden="true"></i> Print CV</button>
           <a href="#contact" class="btn btn-outline-custom hero-btn"><i class="bi bi-envelope me-2" aria-hidden="true"></i> Contact Me</a>
           <a href="application.html" class="btn btn-warning hero-btn" style="color: #000;"><i class="bi bi-file-text me-2" aria-hidden="true"></i> View Job Application</a>
+          <a href="assets/contact.vcf" class="btn btn-success hero-btn" download="Shahensha_Shaha.vcf"><i class="bi bi-person-vcard me-2" aria-hidden="true"></i> Save Contact</a>
         </div>
       </div>
     </section>
@@ -408,6 +472,7 @@
                     <ul>
                         <li><i class="bi bi-fingerprint" aria-hidden="true"></i> 2 Years Aadhaar Operations</li>
                         <li><i class="bi bi-headset" aria-hidden="true"></i> 2 Years Tech Support (Integra Micro)</li>
+                        <li><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Available for Freelance Projects</li>
                     </ul>
                 </div>
             </div>
@@ -425,7 +490,7 @@
             </p>
             <div class="alert alert-info border-0 shadow-sm">
                 <strong><i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i> How I can contribute to your organization:</strong><br>
-                I can efficiently handle IT/computer operations, client/customer data management, documentation workflows, front office support, record management, and basic IT support.
+                Candidate can efficiently handle IT/computer operations, client/customer data management, documentation workflows, front office support, record management, and basic IT support.
             </div>
           </div>
         </div>
@@ -455,7 +520,6 @@
                 <li>Document Scanning, Printing, and Record Management</li>
                 <li>Customer Service & Online Services delivery</li>
                 <li>Basic Technical Troubleshooting & Daily Computer Operations</li>
-                <li>Worked as Ayushman Bharat Operator through CSC</li>
               </ul>
             </div>
 
@@ -486,6 +550,17 @@
                 <li>Computer/System Support & End User Support</li>
                 <li>Issue Identification & Resolution for PDS operations</li>
                 <li>Technical Documentation in a Professional Corporate Environment</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h3 class="h4">Freelance Digital & IT Consultant</h3>
+              <h4 class="h5">Ongoing / Current</h4>
+              <p><em>Independent Professional</em></p>
+              <ul>
+                <li>Providing on-demand digital services and online form processing.</li>
+                <li>Freelance IT troubleshooting, software installation, and system maintenance.</li>
+                <li>Assisting local businesses with data entry and administrative tasks.</li>
               </ul>
             </div>
 
@@ -575,15 +650,6 @@
               <div class="mt-2"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Verified</span></div>
             </div>
           </div>
-          <!-- Certificate Item 4 -->
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-0 shadow-sm h-100 p-4" style="border-left: 4px solid var(--primary-color) !important;">
-              <h3 class="h4"><i class="bi bi-heart-pulse text-danger me-2"></i> Ayushman Mitra</h3>
-              <p class="text-muted mb-1">Issued by: NHA / PMJAY</p>
-              <p class="text-muted small">Ayushman Bharat Scheme</p>
-              <div class="mt-2"><span class="badge bg-success"><i class="bi bi-check-circle me-1"></i> Verified</span></div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -666,6 +732,87 @@
     </section>
     <!-- /Why Hire Me Section -->
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Freelance Services & Pricing</h2>
+        <p>Affordable and professional digital services for your business needs.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="card pricing-card p-4 shadow-sm h-100 text-center">
+              <h3>Basic Support</h3>
+              <h4 class="text-primary my-3">₹500<span>/task</span></h4>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check text-success"></i> Data Entry & Typing</li>
+                <li><i class="bi bi-check text-success"></i> Online Form Filling</li>
+                <li><i class="bi bi-check text-success"></i> Basic Scanning/Printing</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline-primary mt-auto">Choose Plan</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card pricing-card p-4 shadow-sm h-100 text-center border-primary" style="border: 2px solid var(--primary-color);">
+              <span class="badge bg-primary position-absolute top-0 start-50 translate-middle">Most Popular</span>
+              <h3>IT Setup & Troubleshooting</h3>
+              <h4 class="text-primary my-3">₹1500<span>/session</span></h4>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check text-success"></i> Hardware/Software Fixing</li>
+                <li><i class="bi bi-check text-success"></i> OS Installation & Setup</li>
+                <li><i class="bi bi-check text-success"></i> Network Configuration</li>
+              </ul>
+              <a href="#contact" class="btn btn-primary-custom mt-auto">Choose Plan</a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card pricing-card p-4 shadow-sm h-100 text-center">
+              <h3>Monthly Maintenance</h3>
+              <h4 class="text-primary my-3">₹5000<span>/month</span></h4>
+              <ul class="list-unstyled text-start">
+                <li><i class="bi bi-check text-success"></i> Weekly System Checkups</li>
+                <li><i class="bi bi-check text-success"></i> Regular Data Backup</li>
+                <li><i class="bi bi-check text-success"></i> Priority Tech Support</li>
+              </ul>
+              <a href="#contact" class="btn btn-outline-primary mt-auto">Choose Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Client Testimonials</h2>
+        <p>What my clients and colleagues say about my work.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner text-center px-5">
+            <div class="carousel-item active">
+              <i class="bi bi-quote fs-1 text-muted"></i>
+              <p class="fst-italic fs-5 mt-3">"Shahensha is highly reliable and handles all our technical support efficiently. Great problem-solving skills!"</p>
+              <h5 class="mt-4">HR, Integra Micro Systems</h5>
+            </div>
+            <div class="carousel-item">
+              <i class="bi bi-quote fs-1 text-muted"></i>
+              <p class="fst-italic fs-5 mt-3">"Excellent service for Aadhaar operations. Very professional and accurate data handling."</p>
+              <h5 class="mt-4">Local Citizen / Client</h5>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="filter: invert(100%);">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next" style="filter: invert(100%);">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <!-- QR Code Section -->
     <section id="qrcode-section" class="contact section light-background text-center py-5">
       <div class="container" data-aos="fade-up">
@@ -734,6 +881,11 @@
     </div>
   </footer>
 
+  <!-- Freelance Floating Button -->
+  <a href="#contact" class="freelance-btn" aria-label="Hire Me for Freelance">
+    <i class="bi bi-cup-hot-fill" aria-hidden="true"></i> Hire Me (Freelance)
+  </a>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to Top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
 
@@ -775,7 +927,42 @@
           }
       }
     });
+
+
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      let scrollDistance = document.documentElement.scrollTop;
+      let totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let progress = (scrollDistance / totalHeight) * 100;
+      document.getElementById('scroll-progress-bar').style.width = progress + '%';
+    });
   </script>
+  
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    const selectTyped = document.querySelector('.typed');
+    if (selectTyped) {
+      let typed_strings = selectTyped.getAttribute('data-typed-items');
+      typed_strings = typed_strings.split(',');
+      new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+    }
+  </script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,mr,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
