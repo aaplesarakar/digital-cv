@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aaplesarakar.github.io/digital-cv/sitemap.xml
