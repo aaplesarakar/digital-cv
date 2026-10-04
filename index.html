@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
   <!-- Preload Critical Assets (Fixes LCP and Render-Blocking) -->
-  <link rel="preload" href="assets/img/hero-bg.jpeg" as="image">
+  <link rel="preload" href="assets/img/hero-bg.jpeg" as="image" fetchpriority="high">
   <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
   <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style">
   <link rel="preload" href="assets/css/main.css" as="style">
@@ -49,7 +49,8 @@
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
 
@@ -69,14 +70,6 @@
       --text-color: #444444;
       --heading-color: #2c3e50;
       --section-bg: #f8f9fa;
-    }
-
-    [data-theme="dark"] {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --heading-color: #ffffff;
-      --section-bg: #1e1e1e;
-      --dark-color: #ffffff;
     }
 
     body { background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; }
@@ -434,7 +427,7 @@
     <section id="hero" class="hero section dark-background d-flex align-items-center">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h1>Shahensha Kadusha Shaha</h1>
-        <h2 class="h4 mb-4 text-light">I'm a <span class="typed" data-typed-items="Freelancer, Computer & IT Support Expert, Data Management Specialist, Administrative Professional"></span></h2>
+        <h2 class="h4 mb-4 text-light">I'm a <span class="typed" data-typed-items="Freelancer, Computer & IT Support Expert, Data Management Specialist, Administrative Professional, Work From Home Professional"></span></h2>
         <p class="mb-4" style="max-width: 600px;">
           Commerce Graduate with 7+ Years of Digital Service and CSC Operations Experience, 2 Years of Aadhaar Operations Experience and 2 Years of Corporate Technical Support Experience.
         </p>
@@ -473,6 +466,7 @@
                         <li><i class="bi bi-fingerprint" aria-hidden="true"></i> 2 Years Aadhaar Operations</li>
                         <li><i class="bi bi-headset" aria-hidden="true"></i> 2 Years Tech Support (Integra Micro)</li>
                         <li><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Available for Freelance Projects</li>
+                        <li><i class="bi bi-house-laptop" aria-hidden="true"></i> Open to Work From Home (Remote)</li>
                     </ul>
                 </div>
             </div>
@@ -610,6 +604,7 @@
             <li><i class="bi bi-upc-scan" aria-hidden="true"></i> Scanning</li>
             <li><i class="bi bi-robot" aria-hidden="true"></i> Generative AI Tools</li>
             <li><i class="bi bi-briefcase" aria-hidden="true"></i> Administrative Support</li>
+            <li><i class="bi bi-house-laptop" aria-hidden="true"></i> Remote Work (WFH)</li>
         </ul>
       </div>
     </section>
@@ -883,7 +878,7 @@
 
   <!-- Freelance Floating Button -->
   <a href="#contact" class="freelance-btn" aria-label="Hire Me for Freelance">
-    <i class="bi bi-cup-hot-fill" aria-hidden="true"></i> Hire Me (Freelance)
+    <i class="bi bi-cup-hot-fill" aria-hidden="true"></i> Hire Me (Freelance / WFH)
   </a>
 
   <!-- Scroll Top -->
