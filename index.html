@@ -35,8 +35,8 @@
 
   <!-- Preload Critical Assets (Fixes LCP and Render-Blocking) -->
   <link rel="preload" href="assets/img/hero-bg.jpeg" as="image" fetchpriority="high">
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
-  <link rel="preload" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style">
   <link rel="preload" href="assets/css/main.css" as="style">
 
   <!-- Favicons -->
@@ -48,11 +48,11 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"></noscript>
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript><link href="assets/vendor/aos/aos.css" rel="stylesheet"></noscript>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"></noscript>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></noscript>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -390,7 +390,7 @@
 
     <div class="profile-img">
       <!-- Profile Image with proper alt text and width/height for CLS prevention -->
-      <img src="assets/img/my-profile-img.jpg" alt="Shahensha Kadusha Shaha - Profile Photo" class="img-fluid rounded-circle" id="sidebar-profile-img" width="120" height="120" loading="lazy" decoding="async">
+      <img src="assets/img/my-profile-img.jpg" alt="Shahensha Kadusha Shaha - Profile Photo" class="img-fluid rounded-circle" id="sidebar-profile-img" width="120" height="120" decoding="async">
     </div>
 
     <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -788,12 +788,12 @@
             <div class="carousel-item active">
               <i class="bi bi-quote fs-1 text-muted"></i>
               <p class="fst-italic fs-5 mt-3">"Shahensha is highly reliable and handles all our technical support efficiently. Great problem-solving skills!"</p>
-              <h5 class="mt-4">HR, Integra Micro Systems</h5>
+              <h3 class="h5 mt-4">HR, Integra Micro Systems</h3>
             </div>
             <div class="carousel-item">
               <i class="bi bi-quote fs-1 text-muted"></i>
               <p class="fst-italic fs-5 mt-3">"Excellent service for Aadhaar operations. Very professional and accurate data handling."</p>
-              <h5 class="mt-4">Local Citizen / Client</h5>
+              <h3 class="h5 mt-4">Local Citizen / Client</h3>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev" style="filter: invert(100%);">
@@ -888,8 +888,8 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files (Deferred for PageSpeed optimization) -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js" defer></script>
@@ -935,20 +935,22 @@
   </script>
   
   <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
   <script>
-    const selectTyped = document.querySelector('.typed');
-    if (selectTyped) {
-      let typed_strings = selectTyped.getAttribute('data-typed-items');
-      typed_strings = typed_strings.split(',');
-      new Typed('.typed', {
-        strings: typed_strings,
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000
-      });
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const selectTyped = document.querySelector('.typed');
+      if (selectTyped) {
+        let typed_strings = selectTyped.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000
+        });
+      }
+    });
   </script>
 
   <!-- Google Translate -->
@@ -957,7 +959,7 @@
       new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,mr,hi', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
     }
   </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 
 </body>
 </html>
